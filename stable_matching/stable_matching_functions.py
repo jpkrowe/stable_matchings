@@ -232,9 +232,7 @@ def strongly_stable_matching(men_prefs_orig, women_prefs_orig):
                 if not women_prefs[w]:
                     continue
                 tail_men = women_prefs[w][-1]
-                for m_tail in list(
-                    tail_men
-                ):  # Make a copy to avoid modification during iteration
+                for m_tail in list(tail_men):
                     delete_pair(m_tail, w, men_prefs, women_prefs)
 
         # 3. --- TERMINATION CHECK ---
